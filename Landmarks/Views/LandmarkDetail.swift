@@ -11,9 +11,9 @@ struct LandmarkDetail: View {
     let landmark: Landmark
     
     var body: some View {
-        VStack {
+        ScrollView {
             MapView(coordinate: landmark.locationCoordinate)
-                .ignoresSafeArea(edges: .top)
+                //.ignoresSafeArea(edges: .top)
                 .frame(height: 300)
             
             CircleImage(image: landmark.image)
@@ -40,13 +40,15 @@ struct LandmarkDetail: View {
             }
             .padding()
             
-            Spacer()
         }
+        .navigationTitle(landmark.name)
+        .navigationBarTitleDisplayMode(.inline)
+        .ignoresSafeArea(edges: .top)
     }
 }
 
 struct LandmarkDetail_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkDetail(landmark: landmarks[0])
+        LandmarkDetail(landmark: ModelData().landmarks[0])
     }
 }
