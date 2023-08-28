@@ -12,9 +12,10 @@ struct LandmarkList: View {
     @EnvironmentObject var modelData: ModelData
     
     var filteredLandmarks: [Landmark] {
-        modelData.landmarks.filter { landmark in
-            (!showFavoritesOnly || landmark.isFavorite)
-        }
+        
+             modelData.landmarks.filter { landmark in
+                (!showFavoritesOnly || landmark.isFavorite)
+            }
     }
     
     var body: some View {
@@ -32,6 +33,9 @@ struct LandmarkList: View {
                 }
             }
             .navigationTitle("Landmarks")
+            .onDisappear {
+                modelData.saveToJson()
+            }
         }
     }
 }

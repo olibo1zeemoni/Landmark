@@ -9,8 +9,18 @@ import Foundation
 import Combine
 
 final class ModelData: ObservableObject {
-    @Published var landmarks: [Landmark] = load("landmarkData.json")
- //static let singleton = ModelData()
+    @Published var landmarks: [Landmark] = loadFromJSON()
+    //load("landmarkData.json")
+
+    
+    func saveToJson(){
+        saveToJSON(landmarks: landmarks)
+        print("saving \(landmarks.count) landmarks")
+    }
+    
+    // @Published var landmarksFromLocal: [Landmark] = loadFromJSON()
+    
+     
 }
 
 
@@ -33,4 +43,33 @@ func load<T: Decodable>(_ filename: String) -> T {
     } catch {
         fatalError("Couldn't parse \(filename) as \(T.self): \n\(error)")
     }
+}
+
+
+func saveToJSON(landmarks: [Landmark]) {
+    do {
+        let data = try JSONEncoder().encode(landmarks)
+        if let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            let fileURL = documentsDirectory.appendingPathComponent("landmark.json")
+            try data.write(to: fileURL)
+        }
+    } catch {
+        print("Error saving data: \(error)")
+    }
+}
+
+
+func loadFromJSON() -> [Landmark] {
+    var landmarks: [Landmark] = []
+    if let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+        let fileURL = documentsDirectory.appendingPathComponent("landmark.json")
+        do {
+            let data = try Data(contentsOf: fileURL)
+            landmarks = try JSONDecoder().decode([Landmark].self, from: data)
+        } catch {
+            print("Error loading data: \(error)")
+            landmarks = load("landmarkData.json")
+        }
+    }
+    return landmarks
 }
