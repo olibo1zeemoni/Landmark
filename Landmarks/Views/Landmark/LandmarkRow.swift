@@ -25,6 +25,7 @@ struct LandmarkRow: View {
             }
         }
     }
+
 }
 
 struct LandmarkRow_Previews: PreviewProvider {
