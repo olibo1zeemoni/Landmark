@@ -13,12 +13,19 @@ final class ModelData: ObservableObject {
     //load("landmarkData.json")
     var hikes: [Hike] = load("hikeData.json")
     
+    var categories: [String: [Landmark]] {
+        Dictionary(grouping: landmarks) { $0.category.rawValue }
+    }
+    
+    var featured: [Landmark] {
+        landmarks.filter{ $0.isFeatured }
+    }
+    
+    
     func saveToJson(){
         saveToJSON(landmarks: landmarks)
         print("saving \(landmarks.count) landmarks")
     }
-    
-    
      
 }
 
