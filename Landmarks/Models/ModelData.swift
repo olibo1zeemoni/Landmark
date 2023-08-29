@@ -11,14 +11,13 @@ import Combine
 final class ModelData: ObservableObject {
     @Published var landmarks: [Landmark] = loadFromJSON()
     //load("landmarkData.json")
-
+    var hikes: [Hike] = load("hikeData.json")
     
     func saveToJson(){
         saveToJSON(landmarks: landmarks)
         print("saving \(landmarks.count) landmarks")
     }
     
-    // @Published var landmarksFromLocal: [Landmark] = loadFromJSON()
     
      
 }
