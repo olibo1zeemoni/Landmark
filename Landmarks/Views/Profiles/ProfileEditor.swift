@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileEditor: View {
     @Binding var profile: Profile
+    
     var body: some View {
         List {
             HStack {
@@ -16,10 +17,27 @@ struct ProfileEditor: View {
                 Divider()
                 TextField("Username", text: $profile.username)
             }
+            
+            
+            Toggle(isOn: $profile.prefersNotifications, label: {
+                Text("Enable Notification")
+                    .bold()
+            })
+            
+            VStack(alignment: .leading, spacing: 20) {
+                Picker("Seasonal Photo", selection: $profile.seasonalPhoto) {
+                    ForEach(Profile.Season.allCases) { season in
+                        Text(season.rawValue)
+                            .tag(season)
+                    }
+                }
+                .pickerStyle(.palette)
+            }
+            
         }
     }
 }
 
 #Preview {
-    ProfileEditor(profile: .constant(ModelData().profile))
+    ProfileEditor(profile: .constant(.default))
 }
