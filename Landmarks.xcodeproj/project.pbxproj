@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F52A90C82A9A58E80000C6DA /* DemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52A90C72A9A58E80000C6DA /* DemoView.swift */; };
+		F578F35A2A9F96D5005C71B0 /* ProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F578F3592A9F96D5005C71B0 /* ProfileEditor.swift */; };
 		F5D72DC92A9C870700066486 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D72DC82A9C870700066486 /* FavoriteButton.swift */; };
 		F5D72DCB2A9D03F600066486 /* HexagonParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D72DCA2A9D03F600066486 /* HexagonParameters.swift */; };
 		F5D72DCD2A9D06D400066486 /* BadgeBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D72DCC2A9D06D400066486 /* BadgeBackground.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		F52A90C72A9A58E80000C6DA /* DemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoView.swift; sourceTree = "<group>"; };
+		F578F3592A9F96D5005C71B0 /* ProfileEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditor.swift; sourceTree = "<group>"; };
 		F5D72DC82A9C870700066486 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		F5D72DCA2A9D03F600066486 /* HexagonParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonParameters.swift; sourceTree = "<group>"; };
 		F5D72DCC2A9D06D400066486 /* BadgeBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeBackground.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				F5D72DEC2A9F399900066486 /* ProfileHost.swift */,
+				F578F3592A9F96D5005C71B0 /* ProfileEditor.swift */,
 				F5D72DEE2A9F3A1900066486 /* ProfileSummary.swift */,
 			);
 			path = Profiles;
@@ -308,6 +311,7 @@
 				F52A90C82A9A58E80000C6DA /* DemoView.swift in Sources */,
 				F5E8D94D2A98D40E004ACEFE /* LandmarkList.swift in Sources */,
 				F5D72DEF2A9F3A1900066486 /* ProfileSummary.swift in Sources */,
+				F578F35A2A9F96D5005C71B0 /* ProfileEditor.swift in Sources */,
 				F5D72DE82A9E833900066486 /* CategoryItem.swift in Sources */,
 				F5E8D94F2A98E002004ACEFE /* LandmarkDetail.swift in Sources */,
 				F5D72DCF2A9D296A00066486 /* BadgeSymbol.swift in Sources */,
