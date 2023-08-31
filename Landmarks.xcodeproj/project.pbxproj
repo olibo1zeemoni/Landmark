@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F52A90C82A9A58E80000C6DA /* DemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52A90C72A9A58E80000C6DA /* DemoView.swift */; };
 		F578F35A2A9F96D5005C71B0 /* ProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F578F3592A9F96D5005C71B0 /* ProfileEditor.swift */; };
+		F58D99772AA11E65003BACF8 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58D99762AA11E65003BACF8 /* PageControl.swift */; };
 		F5BAE2272AA020AE00546644 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BAE2262AA020AE00546644 /* PageViewController.swift */; };
 		F5BAE2292AA02F4500546644 /* FeatureCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BAE2282AA02F4500546644 /* FeatureCard.swift */; };
 		F5BAE22B2AA0344600546644 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BAE22A2AA0344600546644 /* PageView.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		F52A90C72A9A58E80000C6DA /* DemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoView.swift; sourceTree = "<group>"; };
 		F578F3592A9F96D5005C71B0 /* ProfileEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditor.swift; sourceTree = "<group>"; };
+		F58D99762AA11E65003BACF8 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		F5BAE2262AA020AE00546644 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		F5BAE2282AA02F4500546644 /* FeatureCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCard.swift; sourceTree = "<group>"; };
 		F5BAE22A2AA0344600546644 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				F5BAE2262AA020AE00546644 /* PageViewController.swift */,
+				F58D99762AA11E65003BACF8 /* PageControl.swift */,
 				F5BAE22A2AA0344600546644 /* PageView.swift */,
 				F5BAE2282AA02F4500546644 /* FeatureCard.swift */,
 			);
@@ -323,6 +326,7 @@
 				F5D72DE42A9E714800066486 /* CategoryHome.swift in Sources */,
 				F5D72DED2A9F399900066486 /* ProfileHost.swift in Sources */,
 				F5D72DF12A9F481500066486 /* HikeBadge.swift in Sources */,
+				F58D99772AA11E65003BACF8 /* PageControl.swift in Sources */,
 				F5D72DDF2A9DF2AC00066486 /* HikeGraph.swift in Sources */,
 				F5D72DE62A9E7D6600066486 /* CategoryRow.swift in Sources */,
 				F5E8D92E2A97D911004ACEFE /* LandmarksApp.swift in Sources */,
