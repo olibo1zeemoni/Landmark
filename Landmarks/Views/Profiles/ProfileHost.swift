@@ -3,7 +3,8 @@
 //  Landmarks
 //
 //  Created by Olibo moni on 30/08/2023.
-//
+//When you present a view modally, the destination view covers the source view and replaces the current navigation stack.
+//When you present a view non-modally SwiftUI adds the destination view to the navigation stack.
 
 import SwiftUI
 

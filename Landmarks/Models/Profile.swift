@@ -14,7 +14,7 @@ struct Profile {
     var seasonalPhoto = Season.winter
     var goalDate = Date()
 
-    static let `default` = Profile(username: "g_kumar")
+    static let `default` = Profile(username: "zeemoni")
     
   
     
