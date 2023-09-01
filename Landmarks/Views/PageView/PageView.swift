@@ -14,52 +14,14 @@ struct PageView<Page: View> : View {
      
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
-            VStack {
                 PageViewController(pages: pages, currentPage: $currentPage, direction: $direction)
                     
-                Text("Currrent Page: \(currentPage + 1)")
-            }
-            .padding(-14)
-            
-            HStack {
-                
-                Button {
-                    guard currentPage > 0 else {
-                        currentPage = pages.count - 1
-                        direction = .reverse
-                        return
-                    }
-                    direction = .reverse
-                    currentPage -= 1
-                } label: {
-                    Label("next page", systemImage: "chevron.backward")
-                        .foregroundStyle(.white)
-                        .labelStyle(.iconOnly)
-                        .font(.title)
-                        .bold()
-                    
-                }
-                
-                Spacer()
-                
-                Button {
-                    guard currentPage < (pages.count - 1) else {
-                        direction = .forward
-                        currentPage = 0
-                        return
-                    }
-                    direction = .forward
-                    currentPage += 1
-                } label: {
-                    Label("next page", systemImage: "chevron.forward")
-                        .foregroundStyle(.white)
-                        .labelStyle(.iconOnly)
-                        .font(.title)
-                        .bold()
-                    
-                }
-            }
-            .padding(2)
+                PageControl(numberOfPages: pages.count, currentPage: $currentPage)
+                .frame(width: CGFloat(pages.count * 18))
+                .padding(.trailing)
+        
+               // chevrons
+
         }
     }
 }
@@ -67,4 +29,56 @@ struct PageView<Page: View> : View {
 #Preview("Page View") {
     PageView(pages: ModelData().features.map({ FeatureCard(landmark: $0) }))
         .aspectRatio(1.5, contentMode: .fit)
+}
+
+
+
+
+extension PageView {
+    var chevrons: some View {
+                    HStack {
+        
+                        Button {
+                            guard currentPage > 0 else {
+                                currentPage = pages.count - 1
+                                direction = .reverse
+                                return
+                            }
+                            direction = .reverse
+                            currentPage -= 1
+                        } label: {
+                            Label("next page", systemImage: "chevron.backward")
+                                .labelStyle(.iconOnly)
+                                .font(.title)
+                                .bold()
+        
+                        }
+        
+                        Spacer()
+        
+                        Button {
+                            guard currentPage < (pages.count - 1) else {
+                                direction = .forward
+                                withAnimation {
+                                    currentPage = 0
+                                }
+                                return
+                            }
+                            direction = .forward
+                            withAnimation {
+                                currentPage += 1
+                            }
+                        } label: {
+                            Label("next page", systemImage: "chevron.forward")
+        
+                                .labelStyle(.iconOnly)
+                                .font(.title)
+                                .bold()
+        
+                        }
+                    }
+                    .padding(2)
+                    .padding(.vertical, 100)
+                    .foregroundStyle(.blue)
+    }
 }
